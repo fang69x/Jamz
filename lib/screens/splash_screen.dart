@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jamz/screens/login_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -33,6 +34,9 @@ class _SplashScreenState extends State<SplashScreen>
     Future.delayed(const Duration(milliseconds: 300), () {
       _scaleController.forward();
     });
+    Future.delayed(const Duration(seconds: 10),(){
+      Navigator.of(context).pushReplacement(MaterialPageRoute( builder: (BuildContext context) {return LoginPage();}));
+    });
   }
 
   @override
@@ -41,6 +45,7 @@ class _SplashScreenState extends State<SplashScreen>
     _glowController.dispose();
     super.dispose();
   }
+
 
   @override
   Widget build(BuildContext context) {
